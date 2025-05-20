@@ -48,9 +48,9 @@ npm install
 ```
 DATABASE_URL="your-database-url"
 AUTH_SECRET="your-auth-secret"
-AWS_REGION="your-aws-region"
-AWS_ACCESS_KEY_ID="your-access-key"
-AWS_SECRET_ACCESS_KEY="your-secret-key"
+AWS_REGION_ID="your-aws-region"
+AWS_ACCESS_KEY_ID_ID="your-access-key"
+AWS_SECRET_ACCESS_KEY_ID="your-secret-key"
 ```
 
 4. Initialize the database:

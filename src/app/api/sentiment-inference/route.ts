@@ -69,15 +69,15 @@ export async function POST(req: Request) {
 
     // Call sagemaker endpoint
     const sagemakerClient = new SageMakerRuntimeClient({
-      region: env.AWS_REGION,
+      region: env.AWS_REGION_ID,
       credentials: {
-        accessKeyId: env.AWS_ACCESS_KEY_ID,
-        secretAccessKey: env.AWS_SECRET_ACCESS_KEY,
+        accessKeyId: env.AWS_ACCESS_KEY_ID_ID,
+        secretAccessKey: env.AWS_SECRET_ACCESS_KEY_ID,
       },
     });
 
     const command = new InvokeEndpointCommand({
-      EndpointName: env.AWS_ENDPOINT_NAME,
+      EndpointName: env.AWS_ENDPOINT_NAME_ID,
       ContentType: "application/json",
       Body: JSON.stringify({
         video_path: `s3://your-bucket-name/${key}`,
