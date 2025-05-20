@@ -37,10 +37,10 @@ export async function POST(req: Request) {
 
     // Generate upload url
     const s3Client = new S3Client({
-      region: env.AWS_REGION_ID,
+      region: env.AWS_REGION,
       credentials: {
-        accessKeyId: env.AWS_REGION_ID_ID_ID,
-        secretAccessKey: env.AWS_SECRET_ACCESS_KEY_ID,
+        accessKeyId: env.AWS_ACCESS_KEY_ID,
+        secretAccessKey: env.AWS_SECRET_ACCESS_KEY,
       },
     });
 
@@ -48,7 +48,7 @@ export async function POST(req: Request) {
     const key = `inference/${id}${fileType}`;
 
     const command = new PutObjectCommand({
-      Bucket: env.AWS_INFERENCE_BUCKET_ID,
+      Bucket: env.AWS_INFERENCE_BUCKET,
       Key: key,
       ContentType: `video/${fileType.replace(".", "")}`,
     });

@@ -69,10 +69,10 @@ export async function POST(req: Request) {
 
     // Call sagemaker endpoint
     const sagemakerClient = new SageMakerRuntimeClient({
-      region: env.AWS_REGION_ID,
+      region: env.AWS_REGION,
       credentials: {
-        accessKeyId: env.AWS_REGION_ID_ID_ID,
-        secretAccessKey: env.AWS_SECRET_ACCESS_KEY_ID,
+        accessKeyId: env.AWS_ACCESS_KEY_ID,
+        secretAccessKey: env.AWS_SECRET_ACCESS_KEY,
       },
     });
 
